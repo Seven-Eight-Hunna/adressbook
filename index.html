@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Address book</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./src/images/scripts/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jua&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <dialog id="dialog" class="" method="dialog">
+      <div class="modal-overlay" id="overlay">
+        <form id="formModal" class="modal-content modalWindow" action="">
+          <h2>Add new contact</h2>
+          <div class="modal-content__addPhoto">
+            <img
+              src=""
+              alt=""
+              class="modal-content__addPhoto__img"
+              id="photo-preview"
+            />
+            <div class="modal-content__addPhoto__btn">
+              <input id="addPhotoModal" type="file" name="image"/>
+              <img
+                class="modal-content__addPhoto__btn__img"
+                src="./src/images/plus.webp"
+                alt=""
+              />Add image
+            </div>
+          </div>
+          <div class="modal-content__about">
+            <label for="about" class="modal-content__about__label">About</label>
+            <input
+              class="modal-content__about__input"
+              name="about"
+              type="text"
+            />
+          </div>
+          <div class="modal-content__name">
+            <label for="name" class="modal-content__name__label">Name</label>
+            <input class="modal-content__name__input" name="name" type="text" />
+          </div>
+          <div class="modal-content__surname">
+            <label for="surname" class="modal-content__surname__label"
+              >Surname</label
+            >
+            <input
+              class="modal-content__surname__input"
+              name="surname"
+              type="text"
+            />
+          </div>
+          <div class="modal-content__phone">
+            <label for="phone" class="modal-content__phone__label">Phone</label>
+            <input
+              class="modal-content__phone__input"
+              name="phone"
+              type="tel"
+            />
+          </div>
+          <div class="modal-content__email">
+            <label for="mail" class="modal-content__email__label">Email</label>
+            <input
+              class="modal-content__email__input"
+              name="mail"
+              type="email"
+            />
+          </div>
+          <div class="modal-content__bottom">
+            <select
+              name="gender"
+              id="modalGender"
+              class="modal-content__bottom__gender"
+            >
+              <option value="" disabled>Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+            <button
+              type="submit"
+              id="addNewContact"
+              class="modal-content__bottom__btn"
+            >
+              <img
+                class="modal-content__bottom__btn__img"
+                src="./src/images/plus.webp"
+                alt="Add"
+              />Add new contact
+            </button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+
+    <aside class="asideLeft">
+      <div class="myCard">
+        <h2 class="myCard__name">BitCamp</h2>
+        <div class="myCard__user">
+          <img
+            class="myCard__userPhoto"
+            src="./src/images/ava-men.png"
+            alt="my photo"
+          />
+          <p class="myCard__userName">Maksim</p>
+          <a class="myCard__userEmail" href="mailto: dehter@mail.ru"
+            >dehterr@mail.ru</a
+          >
+          <div class="myCard__userBday">
+            <img
+              src="./src/images/calendar.png"
+              alt="calendar"
+              class="myCard__userBday__img"
+            />
+            <p class="myCard__userBday__date">20-08-2000</p>
+          </div>
+          <div class="myCard__userTel">
+            <img
+              src="./src/images/telephone.png"
+              alt="telephone"
+              class="myCard__userTel__img"
+            />
+            <p class="myCard__userTel__num">
+              <a href="tel:+79956070824">+7 (995) 607-08-24</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <div class="center">
+      <header id="header" class="header">
+        <form id="formSearch" class="form">
+          <input
+            name="search"
+            type="text"
+            class="form__input"
+            id="inputPanelSearch"
+          />
+          <button class="form__searchButton" id="searchBtn">Search</button>
+          <select name="gender" id="gender" class="form__gender">
+            <option value="">Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <select name="sort" id="sort" class="form__sort">
+            <option value="">Sort</option>
+            <option value="a-z">A-Z</option>
+            <option value="z">Z-A</option>
+            <option value="date">Newest</option>
+          </select>
+        </form>
+        <button type="button" id="openModalWin" class="form__openModalWin">
+          <img
+            src="./src/images/plus.webp"
+            alt="+"
+            class="form__openModalWin__img"
+          />New contact
+        </button>
+      </header>
+      <main>
+        <ul id="result">
+          <!-- <li id="li" class="contact">
+            <img
+              src="./src/images/ava-men.png"
+              alt="аватарка контакта"
+              class="contact__img"
+            />
+            <div class="contact__info">
+              <p class="contact__info__name">Curt Cobain</p>
+              <p class="contact__info__status">Best friend</p>
+            </div>
+            <a href="tel:+71234567890" class="contact__number"
+              >8 (123) 456-78-90</a
+            >
+            <a href="mailto:" class="contact__email">kurtcobain@gmail.com</a>
+          </li> -->
+        </ul>
+        <aside class="asideRight">
+          <!-- <div class="asideRight__user">
+            <img
+              class="asideRight__user__photo"
+              src="./src/images/ava-men.png"
+              alt="photo"
+            />
+            <p class="asideRight__user__name">Curt Cobain</p>
+          </div>
+          <button class="asideRight__editBtn">Edit contact</button>
+          <div class="asideRight__link">
+            <button class="asideRight__tel">
+              <img
+                class="asideRight__tel__img"
+                src="./src/images/telephone.png"
+                alt=""
+              />
+            </button>
+            <button class="asideRight__email">
+              <img
+                class="asideRight__email__img"
+                src="./src/images/email.png"
+                alt=""
+              />
+            </button>
+          </div>
+          <div class="asideRight__date">
+            <p class="asideRight__date__text">Date of create</p>
+            <p class="asideRight__date__numbers">20.08.2024</p>
+          </div> -->
+        </aside>
+      </main>
+    </div>
+    <footer></footer>
+  </body>
+</html>
